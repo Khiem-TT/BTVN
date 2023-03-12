@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex4</title>
+</head>
+<body>
+<h1>Kiểm tra tam giác</h1>
+<p>Nhập độ dài cạnh 1: <input type="text" id="side1"> cm</p>
+<p>Nhập độ dài cạnh 2: <input type="text" id="side2"> cm</p>
+<p>Nhập độ dài cạnh 3: <input type="text" id="side3"> cm</p>
+<button onclick="check()">Kiểm tra</button>
+<b><p id="rs"></p></b>
+<script>
+  function check() {
+      let s1 = +document.getElementById('side1').value;
+      let s2 = +document.getElementById('side2').value;
+      let s3 = +document.getElementById('side3').value;
+      if (Math.abs(s2 - s3) < s1 && s1 < (s2 + s3)) {
+          if (s1 === s2 && s2 === s3) {
+              document.getElementById('rs').innerHTML = 'Tam giác đều';
+          } else if (s1 === s2 || s2 === s3 || s3 === s1) {
+              document.getElementById('rs').innerHTML = 'Tam giác cân';
+          } else if (Math.pow(s1, 2) === Math.pow(s2, 2) + Math.pow(s3, 2) || Math.pow(s2, 2) === Math.pow(s1, 2) + Math.pow(s3, 2) || Math.pow(s3, 2) === Math.pow(s1, 2) + Math.pow(s2, 2)) {
+              document.getElementById('rs').innerHTML = 'Tam giác vuông';
+          } else {
+              document.getElementById('rs').innerHTML = 'Tam giác thường';
+          }
+      } else {
+          document.getElementById('rs').innerHTML = "Không thể là tam giác";
+      }
+  }
+</script>
+</body>
+</html>

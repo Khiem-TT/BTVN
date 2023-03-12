@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex1</title>
+</head>
+<body>
+<h1>Kiểm tra mật độ dân số</h1>
+<p>Số dân trong một khu vực: <input type="text" id="pplt"> người</p>
+<p>Diện tích khu vực: <input type="text" id="area"> km <sup>2</sup></p>
+<button onclick="populationDensity()">Kiểm tra</button>
+<b><p id="result"></p></b>
+<script>
+    function populationDensity() {
+        let n = +document.getElementById('pplt').value;
+        let m = +document.getElementById('area').value;
+        let pd = n / m;
+        if (pd > 1000) {
+            document.getElementById('result').innerHTML = 'Khu vực này quá đông đúc';
+        } else
+            document.getElementById('result').innerHTML = 'Khu vực này không quá đông đúc';
+    }
+</script>
+</body>
+</html>
